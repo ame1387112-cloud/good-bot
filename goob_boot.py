@@ -13,7 +13,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # توکن ربات شما
-TOKEN = "6542041216:AAHMLWjWcbKiGvU4KSPCpVDE83LU9A9FDs8"
+TOKEN = "6542041216:AAFcxbb3DApZ8CAIRQ2Tm7B-NbzFmt--CVQ"
 
 # --- بخشی که باید تنظیم کنید ---
 # آیدی عددی مدیر اصلی که می‌تواند تنظیمات را مدیریت کند
@@ -287,7 +287,7 @@ async def start(update: Update, context: CallbackContext) -> None:
                 "سلام! 👋\n\n"
                 "این ربات فقط از طریق لینک‌های اختصاصی کار می‌کند.\n"
                 "لطفاً از لینک معتبری برای مشاهده محتوا استفاده کنید.\n\n"
-                "توجه: محتوا پس از یک دقیقه خودکارسازی می‌شود."
+                "توجه: محتوا پس از یک دقیقه خودکار پاک سازی می‌شود."
             )
     except (NetworkError, TimedOut):
         await update.message.reply_text("خطا در اتصال به سرور تلگرام. لطفاً چند لحظه دیگر دوباره تلاش کنید.")
