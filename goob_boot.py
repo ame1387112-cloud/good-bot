@@ -13,13 +13,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # توکن ربات شما
-TOKEN = "6542041216:AAFcxbb3DApZ8CAIRQ2Tm7B-NbzFmt--CVQ"
+TOKEN = os.getenv("TOKEN")
 
-# --- بخشی که باید تنظیم کنید ---
-# آیدی عددی مدیر اصلی که می‌تواند تنظیمات را مدیریت کند
-# آیدی خودتان را از ربات @userinfobot بگیرید و اینجا قرار دهید
-ADMIN_USER_ID = 6196578711 # <--- آیدی عددی خود را اینجا قرار دهید
-# --- پایان بخشی که باید تنظیم کنید ---
+
+ADMIN_USER_ID = int(os.getenv("ADMIN_USER_ID"))
 
 # نام فایل‌های پیکربندی
 CONFIG_FILE = 'config.json'
@@ -287,7 +284,7 @@ async def start(update: Update, context: CallbackContext) -> None:
                 "سلام! 👋\n\n"
                 "این ربات فقط از طریق لینک‌های اختصاصی کار می‌کند.\n"
                 "لطفاً از لینک معتبری برای مشاهده محتوا استفاده کنید.\n\n"
-                "توجه: محتوا پس از یک دقیقه خودکار پاک سازی می‌شود."
+                "توجه: محتوا پس از یک دقیقه خودکارسازی می‌شود."
             )
     except (NetworkError, TimedOut):
         await update.message.reply_text("خطا در اتصال به سرور تلگرام. لطفاً چند لحظه دیگر دوباره تلاش کنید.")
